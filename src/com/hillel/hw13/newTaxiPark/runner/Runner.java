@@ -5,7 +5,7 @@ import com.hillel.hw13.newTaxiPark.storage.CarsStorage;
 import com.hillel.hw13.newTaxiPark.storage.impl.FileCarsStorage;
 import com.hillel.hw13.newTaxiPark.taxipark.TaxiPark;
 import com.hillel.hw13.newTaxiPark.taxipark.impl.TaxiParkImpl;
-
+import java.util.Comparator;
 import java.util.List;
 
 public class Runner {
@@ -16,23 +16,12 @@ public class Runner {
 
         TaxiPark park = new TaxiParkImpl(cars);
 
-        System.out.print("Coast TaxiPark = ");
-        System.out.println(park.getcoastOfTaxiPark());
+        System.out.println(park.coastOfTaxiPark());
+        System.out.println(park.searchCarsForSpeed(0, 200));
+        System.out.println(park.sortByFuelConsumption(Comparator.comparingInt(Car::getFuelConsumption)));
 
-       /* System.out.print("Search cars by speed = ");
-        try {
-            Car[] searchCarsBySpeed = park.getsearchCarsForSpeed(0, -1);
-            for (int i = 0; i < searchCarsBySpeed.length; i++) {
-                System.out.println(searchCarsBySpeed[i].toString());
-            }
-        } catch (SearchCarForSpeedException e) {
-            System.out.println("Exception warning: " + e);
-        }*/
-
-        System.out.print("Cars fuel consumption = ");
-        park.getfuelConsumption();
-        System.out.println(park);
         storage.writeCars(cars);
+
 
     }
 }

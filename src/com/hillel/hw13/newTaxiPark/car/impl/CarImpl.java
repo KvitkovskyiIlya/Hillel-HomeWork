@@ -1,8 +1,11 @@
 package com.hillel.hw13.newTaxiPark.car.impl;
 
+import HW6.Interfaces.CarInter;
 import com.hillel.hw13.newTaxiPark.car.Car;
 
-abstract public class CarImpl implements Car {
+import java.util.Comparator;
+
+abstract public class CarImpl implements Car, Comparator<Car> {
     private int price;
     private int fuelConsumption;
     private int maxSpeed;
@@ -38,6 +41,17 @@ abstract public class CarImpl implements Car {
 
     public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public int compare(Car o1, Car o2) {
+        if (o1.getFuelConsumption() > o2.getFuelConsumption()) {
+            return 1;
+        } else if (o1.getFuelConsumption() < o2.getFuelConsumption()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
     @Override

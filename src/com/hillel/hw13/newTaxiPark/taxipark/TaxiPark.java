@@ -3,12 +3,14 @@ package com.hillel.hw13.newTaxiPark.taxipark;
 import com.hillel.hw13.newTaxiPark.exception.SearchCarForSpeedException;
 import com.hillel.hw13.newTaxiPark.car.Car;
 
+import java.util.Comparator;
 import java.util.List;
 
 public interface TaxiPark {
-    int getcoastOfTaxiPark();
+    int coastOfTaxiPark();
 
-    List<Car> getsearchCarsForSpeed(int minSpeed, int maxSpeed) throws SearchCarForSpeedException;
+    List<Car> searchCarsForSpeed(int minSpeed, int maxSpeed);
 
-    List<Car> getfuelConsumption();
+    List<Car> sortByFuelConsumption(Comparator<? super Car> comparator);
+
 }
