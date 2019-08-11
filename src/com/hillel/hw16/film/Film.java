@@ -10,20 +10,8 @@ public class Film extends Entity {
     private String releaseCountry;
     private List<String> actorList;
 
-    public Film(int id, String titleOfFilm, List <String> actorList) {
-        super(id);
-        this.titleOfFilm = titleOfFilm;
-        this.actorList = actorList;
-    }
 
-    public Film(int id, String titleOfFilm, int releaseDate, String releaseCountry) {
-        super(id);
-        this.titleOfFilm = titleOfFilm;
-        this.releaseDate = releaseDate;
-        this.releaseCountry = releaseCountry;
-    }
-
-    public Film(int id, String titleOfFilm,List <String> actorList, int releaseDate, String releaseCountry) {
+    public Film(int id, String titleOfFilm, List<String> actorList, int releaseDate, String releaseCountry) {
         super(id);
         this.titleOfFilm = titleOfFilm;
         this.releaseDate = releaseDate;

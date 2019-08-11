@@ -11,7 +11,7 @@ public class Director extends Person {
 
     @Override
     public String toString() {
-        return "hw16.runner.person.Director{" + getId() + getFullName() + getDateOfBirth() +
+        return "Director{" + getId() + getFullName() + getDateOfBirth() +
                 '}';
     }
 }
